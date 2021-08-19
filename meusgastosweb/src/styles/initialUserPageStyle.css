@@ -1,0 +1,31 @@
+.initialuserpage-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    height: 75vh;
+}
+
+.name-user {
+    align-self: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 8vh;
+}
+
+.section-resume-expense {
+    display: flex;
+    padding: 0.1rem 1rem;
+    justify-content: space-between;
+    width: 70vw;
+    align-self: center;
+    background-color: grey;
+    border-radius: 8px;
+    margin-bottom: 1vh;
+}
+
+.section-resume-expense > p {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #fff;
+}
+

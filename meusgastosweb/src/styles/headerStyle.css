@@ -1,0 +1,53 @@
+header {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1rem;
+    border-bottom: 1px solid #393a57;
+}
+
+.header-button {
+    background-color: #80717f;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1.4rem;
+}
+
+.header-button:hover{
+    filter: brightness(115%);
+    cursor: pointer;
+}
+
+a > .header-button {
+    background-color: #80717f;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    padding: 0.2rem;
+    font-size: 1.4rem;
+}
+
+a > .header-button:hover{
+    filter: brightness(115%);
+    cursor: pointer;
+}
+
+.header-button-add {
+    background-color: orangered;
+    color: #fff;
+    border: none;
+    padding: 0 0.5rem;
+    font-size: 1.8rem;
+    border-radius: 16px;
+}
+
+.header-button-add:hover{
+    filter: brightness(115%);
+    cursor: pointer;
+}
+
+.header-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #80717f;
+}
