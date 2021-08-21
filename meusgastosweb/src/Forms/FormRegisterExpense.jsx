@@ -4,33 +4,24 @@ import { Field, reduxForm } from 'redux-form';
 
 import '../styles/loginStyle.css';
 
-const FormRegisterUser = props => {
+const FormRegisterExpense = props => {
 
     const formComponents = [
         {
-            label:'Email',
-            name:'email',
+            label:'Titulo',
+            name:'title',
         },
         {
-            label:'Nome',
-            name:'userName',
-        },
-        {
-            label:'Senha',
-            name:'password',
-            type:'password',
-            autocomplete:'on'
-        },
+            label:'Valor',
+            name:'valueOfExpense',
+        }
     ];
 
     return(
         <main className="login-page-container">
             <section className="login-form-container">
-               <form 
-                    initialvalues={props.initialValues ? props.initialValues : ''}
-                    onSubmit={props.handleSubmit}
-                >
-                <p>{props.isUpdateForm ? 'Editar usuário' : 'Cadastrar usuário'}</p>  
+               <form onSubmit={props.handleSubmit}>
+                <p>Cadastrar Despesa</p>  
                 
                 {formComponents.map(comp => {
                     return (
@@ -40,17 +31,29 @@ const FormRegisterUser = props => {
                                 required
                                 name={comp.name}
                                 component='input'
-                                type={comp.type ? comp.type : 'text'}
-                                autoComplete={comp.autoComplete ? comp.autocomplete : 'off'} 
+                                type='text' 
                             />
                         </div>
                     );
                 })}
+
+                <div className="input-login-container">
+                    <label htmlFor="typeOfExpense" >Tipo de despesa</label>
+                    <Field name="typeOfExpense" component="select" required  className="type-expense-input" >
+                        <option value="" disabled defaultValue >Selecione um tipo</option>
+                        <option value="GROCERY">Mercado</option>
+                        <option value="OTHER_BASIC_EXPENSES">Outras despesas básicas</option>
+                        <option value="GOODS_PURCHASED">Bens adquiridos</option>
+                        <option value="RECREATION">Lazer</option>
+                        <option value="OTHERS_EXPENSES">Outras despesas</option>
+                    </Field>
+                </div>
+
                 <button type="submit" className="button-login">
                     Salvar
                 </button>
 
-                <Link to="/" >
+                <Link to="/initialUserPage" >
                     <button type="button" className="button-login-register">
                         Voltar
                     </button>
@@ -62,7 +65,4 @@ const FormRegisterUser = props => {
     );
 }
 
-export default reduxForm({
-    form: 'formRegisterUser',
-    enableReinitialize: true
-})(FormRegisterUser);
+export default reduxForm({form: 'formRegisterExpense'})(FormRegisterExpense)

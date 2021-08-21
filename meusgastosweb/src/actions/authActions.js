@@ -16,7 +16,6 @@ export const relogin = () => {
 
         try {
             const data = JSON.parse(localStorage.getItem('meus-gastos'));
-            //console.log(data);
 
             if (data) {
 
@@ -99,7 +98,7 @@ export const login = values => {
                     })
 
                     dispatch({ type: LOGIN, payload: false })
-
+                    
                     window.location = '/initialUserPage'
                 }
             })
@@ -122,11 +121,9 @@ export const userSignup = values => {
                     toastr.error('Erro!', response.data)
                 else if (response.status === 200) {
 
-                    dispatch(reset('formRegisterUser'))
-
-                    window.location = '/'    
                     toastr.success('Cadastro realizado com Sucesso!')
-        
+                    dispatch(reset('formRegisterUser'))
+                   
                 }
             })
             .catch(error => toastr.error('Ocorreu um erro no servidor!', 'Tente mais tarde'))

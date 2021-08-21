@@ -10,6 +10,8 @@ import LoginPage from '../Pages/LoginPage';
 import LogoutPage from '../Pages/LogoutPage';
 import RegisterUserPage from '../Pages/RegisterUserPage';
 import InitialUserPage from '../Pages/InitialUserPage';
+import RegisterExpensePage from '../Pages/RegisterExpensePage';
+import EditUserPage from '../Pages/EditUserPage';
 
 function ProtectedRoute({component: Component, ...rest}){
 
@@ -45,6 +47,8 @@ export default function AppRoutes(){
                 <Route exact path='/' component={LoginPage} />
                 <Route path='/registerUserPage' component={RegisterUserPage} />
                 <ProtectedRoute path='/initialUserPage' component={InitialUserPage} />
+                <ProtectedRoute path='/registerExpensePage' component={RegisterExpensePage} />
+                <ProtectedRoute path='/editUserPage' component={EditUserPage} />
 
                 <Route path='/Logout' component={LogoutPage}/>
             </Switch>

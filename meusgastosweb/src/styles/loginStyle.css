@@ -76,3 +76,11 @@ a > .button-login-register:hover{
     filter: brightness(115%);
     cursor: pointer;
 }
+
+.type-expense-input {
+    margin-top: 0.2rem;
+    font-size: 1rem;
+    padding: 0.2rem;
+    border-radius: 8px;
+}
+

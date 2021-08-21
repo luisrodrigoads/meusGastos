@@ -8,12 +8,18 @@ export default function HeaderPage(props){
             {
                 props.isLogged ? (
                     <>
-                        <button className="header-button">
-                            config
-                        </button>
-                        <button className="header-button-add">
-                            +
-                        </button>
+                        <Link to="/editUserPage">
+                            <button className="header-button">
+                                config
+                            </button>
+                        </Link>
+
+                        <Link to="/registerExpensePage">
+                            <button className="header-button-add">
+                                +
+                            </button>
+                        </Link>
+                        
                         <Link to="/Logout">
                             <button className="header-button">
                                 sair
