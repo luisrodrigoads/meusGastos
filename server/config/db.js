@@ -1,6 +1,5 @@
 const mongoose = require('mongoose')
 
-const userSchema = require('../models/userSchema')
 const expenseSchema = require('../models/expenseSchema')
 
 mongoose.connect("mongodb://localhost:27017/meus-gastos",
@@ -16,7 +15,6 @@ mongoose.connect("mongodb://localhost:27017/meus-gastos",
     console.log("Error connecting with mongo. ", err)
 });
 
-const user = mongoose.model('user', userSchema)
 const expense = mongoose.model('expense', expenseSchema)
 
-module.exports = {user, expense}
+module.exports = {expense}

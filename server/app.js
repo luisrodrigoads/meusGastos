@@ -4,8 +4,6 @@ const app = express()
 
 const port = process.env.PORT || 8080
 
-const validateToken = require('./config/validateToken');
-
 const corsOptions = {
     origin: '*'
 }
@@ -16,25 +14,16 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
 const ExpensesRoutes = require('./routes/expenseUser')
-const UserRoutes = require('./routes/User')
-const AuthRoutes = require('./routes/authUser')
-
-//Login/Register user routes
-app.post('/login',(req, res)=> AuthRoutes.login(req, res))
-app.post('/signup',(req, res)=> UserRoutes.signup(req, res))
-app.post('/validateToken', (req, res)=> AuthRoutes.validateToken(req, res))
-
-//app.use('*', validateToken);
-
-//User routes
-app.get('/updateToken', validateToken,(req, res) => AuthRoutes.updateToken(req, res))
-app.post('/tradeTokenToUser', validateToken,(req, res)=> AuthRoutes.tradeTokenToUser(req, res))
-app.post('/updateUser', validateToken,(req, res) => UserRoutes.updateUser(req, res))
 
 //Expenses routes
-app.get('/expenseUser', validateToken,(req, res) => ExpensesRoutes.getUserExpense(req, res))
-app.post('/expenseUser', validateToken,(req, res) => ExpensesRoutes.setExpense(req, res))
-app.get('/deleteUserExpense/:id', (req, res) => ExpensesRoutes.deleteUserExpense(req, res))
+app.get('/expenseUser', (req, res) => ExpensesRoutes.getExpense(req, res))
+app.post('/expenseUser', (req, res) => ExpensesRoutes.setExpense(req, res))
+app.get('/deleteUserExpense/:id', (req, res) => ExpensesRoutes.deleteExpense(req, res))
+app.get('/expenseGrocery', (req, res) => ExpensesRoutes.getTypeGrocery(req, res))
+app.get('/expenseOtherBasics', (req, res) => ExpensesRoutes.getTypeOtherBasics(req, res))
+app.get('/expenseGoodsPurchased', (req, res) => ExpensesRoutes.getTypeGoodsPurchased(req, res))
+app.get('/expenseRecreation', (req, res) => ExpensesRoutes.getTypeRecreation(req, res))
+app.get('/expenseOtherExpenses', (req, res) => ExpensesRoutes.getTypeOtherExpenses(req, res))
 
 
 app.listen(port, () => console.log(`Server on port: ${port}`));
