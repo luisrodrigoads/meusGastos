@@ -46,7 +46,6 @@
 }
 
 .button-login {
-    margin-bottom: 0.4rem;
     color: #fff;
     background-color: orangered;
     border: none;
@@ -75,6 +74,12 @@ a > .button-login-register {
 a > .button-login-register:hover{
     filter: brightness(115%);
     cursor: pointer;
+}
+
+a {
+    width: 100%;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
 }
 
 .type-expense-input {

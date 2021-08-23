@@ -29,3 +29,62 @@
     color: #fff;
 }
 
+.section-resume-expense > button {
+    align-self: center;
+    padding: 0.5rem;
+    background-color: white;
+    border: none;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    color: grey;
+    font-weight: bold;
+}
+
+.section-resume-expense > button:hover {
+    filter: brightness(90%);
+    cursor: pointer;
+}
+
+.header-initialuserpage-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    width: 70vw;
+    border: 1px solid grey;
+    padding: 0.1rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+}
+
+.section-list > div {
+    display: flex;
+    justify-content: space-between
+}
+
+.section-list > div > p {
+    font-size: 1.1rem;
+}
+
+.section-list > div > button {
+    padding: 0.5rem;
+    align-self: center;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.section-list > div > button:hover {
+   filter: brightness(80%);
+   cursor: pointer;
+}

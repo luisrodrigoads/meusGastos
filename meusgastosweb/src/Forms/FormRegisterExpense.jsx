@@ -14,13 +14,17 @@ const FormRegisterExpense = props => {
         {
             label:'Valor',
             name:'valueOfExpense',
+            placeholder:'00.0'
         }
     ];
 
     return(
         <main className="login-page-container">
             <section className="login-form-container">
-               <form onSubmit={props.handleSubmit}>
+               <form
+                    initialvalues={props.initialValues ? props.initialValues : ''} 
+                    onSubmit={props.handleSubmit}
+               >
                 <p>Cadastrar Despesa</p>  
                 
                 {formComponents.map(comp => {
@@ -31,6 +35,7 @@ const FormRegisterExpense = props => {
                                 required
                                 name={comp.name}
                                 component='input'
+                                placeholder={comp.placeholder && comp.placeholder}
                                 type='text' 
                             />
                         </div>
@@ -53,7 +58,7 @@ const FormRegisterExpense = props => {
                     Salvar
                 </button>
 
-                <Link to="/initialUserPage" >
+                <Link to="/" >
                     <button type="button" className="button-login-register">
                         Voltar
                     </button>
@@ -65,4 +70,7 @@ const FormRegisterExpense = props => {
     );
 }
 
-export default reduxForm({form: 'formRegisterExpense'})(FormRegisterExpense)
+export default reduxForm({
+    form: 'formRegisterExpense',
+    enableReinitialize: true
+})(FormRegisterExpense)
